@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "entrantes",
+  "info": {
+    "singularName": "entrante",
+    "pluralName": "entrantes",
+    "displayName": "Entrantes"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Nombre": {
+      "type": "string",
+      "required": true
+    },
+    "Precio": {
+      "type": "decimal",
+      "required": true
+    },
+    "Descripcion": {
+      "type": "text"
+    }
+  }
+}

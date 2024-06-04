@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "platos",
+  "info": {
+    "singularName": "plato",
+    "pluralName": "platos",
+    "displayName": "Platos"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Nombre": {
+      "type": "string",
+      "required": true
+    },
+    "Descripcion": {
+      "type": "text"
+    },
+    "Precio": {
+      "type": "decimal"
+    }
+  }
+}

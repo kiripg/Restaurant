@@ -788,6 +788,169 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
+export interface ApiBebidaBebida extends Schema.CollectionType {
+  collectionName: 'bebidas';
+  info: {
+    singularName: 'bebida';
+    pluralName: 'bebidas';
+    displayName: 'Bebidas';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Nombre: Attribute.String & Attribute.Required;
+    precio: Attribute.Decimal;
+    Descripcion: Attribute.Text;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::bebida.bebida',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::bebida.bebida',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiEntranteEntrante extends Schema.CollectionType {
+  collectionName: 'entrantes';
+  info: {
+    singularName: 'entrante';
+    pluralName: 'entrantes';
+    displayName: 'Entrantes';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Nombre: Attribute.String & Attribute.Required;
+    Precio: Attribute.Decimal & Attribute.Required;
+    Descripcion: Attribute.Text;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::entrante.entrante',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::entrante.entrante',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPlatoPlato extends Schema.CollectionType {
+  collectionName: 'platos';
+  info: {
+    singularName: 'plato';
+    pluralName: 'platos';
+    displayName: 'Platos';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Nombre: Attribute.String & Attribute.Required;
+    Descripcion: Attribute.Text;
+    Precio: Attribute.Decimal;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::plato.plato',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::plato.plato',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPostrePostre extends Schema.CollectionType {
+  collectionName: 'postres';
+  info: {
+    singularName: 'postre';
+    pluralName: 'postres';
+    displayName: 'Postres';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Nombre: Attribute.String & Attribute.Required;
+    Precio: Attribute.Decimal;
+    Descripcion: Attribute.Text;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::postre.postre',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::postre.postre',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiReservaReserva extends Schema.CollectionType {
+  collectionName: 'reservas';
+  info: {
+    singularName: 'reserva';
+    pluralName: 'reservas';
+    displayName: 'Reservas';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Nombre: Attribute.String & Attribute.Required;
+    Personas: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<1>;
+    Email: Attribute.Email & Attribute.Required;
+    Fecha: Attribute.DateTime & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::reserva.reserva',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::reserva.reserva',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -806,6 +969,11 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
+      'api::bebida.bebida': ApiBebidaBebida;
+      'api::entrante.entrante': ApiEntranteEntrante;
+      'api::plato.plato': ApiPlatoPlato;
+      'api::postre.postre': ApiPostrePostre;
+      'api::reserva.reserva': ApiReservaReserva;
     }
   }
 }

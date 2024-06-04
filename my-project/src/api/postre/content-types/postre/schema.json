@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "postres",
+  "info": {
+    "singularName": "postre",
+    "pluralName": "postres",
+    "displayName": "Postres",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Nombre": {
+      "type": "string",
+      "required": true
+    },
+    "Precio": {
+      "type": "decimal"
+    },
+    "Descripcion": {
+      "type": "text"
+    }
+  }
+}
